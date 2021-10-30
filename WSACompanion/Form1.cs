@@ -21,12 +21,11 @@ namespace WSACompanion
         void ShowConnectDialog()
         {
             flowPanel.Enabled = new ADBConnectDialog().ShowDialog() == DialogResult.OK;
+            menuItemConnect.Text = flowPanel.Enabled ? $"Connected to {Data.IP}" : "Connect to Android with ADB";
             if (flowPanel.Enabled)
             {
-                MessageBox.Show("Ready");
                 Data.CMD.OnDataReceived += (object sender, DataReceivedEventArgs e) =>
                 {
-                    if (e.Data == null || e.Data.StartsWith("PS")) return;
                     Invoke(new Action(() =>
                     {
                         tbLog.AppendText(e.Data + Environment.NewLine);
@@ -35,7 +34,7 @@ namespace WSACompanion
             }
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
+        private void menuItemConnect_Click(object sender, EventArgs e)
         {
             ShowConnectDialog();
         }
@@ -53,7 +52,8 @@ namespace WSACompanion
         private void btnInstall_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.ShowDialog();
+            ofd.Filter = "APK|*.apk|Any file|*.*";
+            if (ofd.ShowDialog() != DialogResult.OK) return;
 
             if (cbInstallKeepData.Checked)
                 Data.CMD.Execute($"{Data.ADBPath} install -r \"{ofd.FileName}\"");

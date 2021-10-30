@@ -41,11 +41,9 @@
             // 
             // tbIP
             // 
-            this.tbIP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbIP.Location = new System.Drawing.Point(12, 54);
             this.tbIP.Name = "tbIP";
-            this.tbIP.Size = new System.Drawing.Size(200, 20);
+            this.tbIP.Size = new System.Drawing.Size(100, 20);
             this.tbIP.TabIndex = 0;
             this.tbIP.Text = "172.20.77.222";
             this.toolTip.SetToolTip(this.tbIP, "Open the Windows Subsystem for Android app and copy the IP address from there.");
@@ -59,13 +57,14 @@
             this.label1.Size = new System.Drawing.Size(104, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "2. WSA\'s IP address";
+            this.toolTip.SetToolTip(this.label1, "Open the Windows Subsystem for Android app and copy the IP address from there.");
             // 
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.Enabled = false;
-            this.btnOk.Location = new System.Drawing.Point(137, 156);
+            this.btnOk.Location = new System.Drawing.Point(217, 112);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 2;
@@ -76,7 +75,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(56, 156);
+            this.btnCancel.Location = new System.Drawing.Point(136, 112);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -85,11 +84,9 @@
             // 
             // btnADB
             // 
-            this.btnADB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnADB.Location = new System.Drawing.Point(12, 12);
             this.btnADB.Name = "btnADB";
-            this.btnADB.Size = new System.Drawing.Size(200, 23);
+            this.btnADB.Size = new System.Drawing.Size(100, 23);
             this.btnADB.TabIndex = 4;
             this.btnADB.Text = "1. Find ADB";
             this.btnADB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -98,11 +95,9 @@
             // 
             // btnConnect
             // 
-            this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConnect.Location = new System.Drawing.Point(12, 80);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(200, 23);
+            this.btnConnect.Size = new System.Drawing.Size(100, 23);
             this.btnConnect.TabIndex = 5;
             this.btnConnect.Text = "3. Connect";
             this.btnConnect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -113,18 +108,18 @@
             // 
             this.tbLog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbLog.Location = new System.Drawing.Point(12, 109);
+            this.tbLog.Location = new System.Drawing.Point(118, 12);
             this.tbLog.Multiline = true;
             this.tbLog.Name = "tbLog";
             this.tbLog.ReadOnly = true;
-            this.tbLog.Size = new System.Drawing.Size(200, 40);
+            this.tbLog.Size = new System.Drawing.Size(174, 91);
             this.tbLog.TabIndex = 6;
             // 
             // ADBConnectDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(224, 191);
+            this.ClientSize = new System.Drawing.Size(304, 147);
             this.Controls.Add(this.tbLog);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.btnADB);

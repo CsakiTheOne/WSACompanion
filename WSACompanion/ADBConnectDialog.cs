@@ -47,8 +47,6 @@ namespace WSACompanion
 
         private void CMD_OnDataReceived(object sender, System.Diagnostics.DataReceivedEventArgs e)
         {
-            if (e.Data == null || !Visible) return;
-
             Invoke(new Action(() => {
                 if (e.Data.Length > 1)
                 {

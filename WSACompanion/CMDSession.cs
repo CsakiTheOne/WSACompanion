@@ -13,6 +13,7 @@ namespace WSACompanion
         public event DataReceivedEventHandler OnDataReceived;
 
         Process cmd;
+        StreamWriter sw;
         bool isStarted = false;
 
         public void Start()
@@ -28,19 +29,19 @@ namespace WSACompanion
             cmd.OutputDataReceived += Cmd_OutputDataReceived;
             cmd.Start();
             cmd.BeginOutputReadLine();
+            sw = cmd.StandardInput;
             isStarted = true;
         }
 
         private void Cmd_OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
+            if (e.Data == null || e.Data.Trim().Length < 1) return;
             OnDataReceived?.Invoke(sender, e);
         }
 
         public void Execute(string command)
         {
             if (!isStarted) return;
-
-            StreamWriter sw = cmd.StandardInput;
             sw.WriteLine(command);
         }
     }

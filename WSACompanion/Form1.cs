@@ -61,6 +61,21 @@ namespace WSACompanion
                 Data.CMD.Execute($"{Data.ADBPath} install \"{ofd.FileName}\"");
         }
 
+        private void lblInstallDrop_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Move;
+        }
+
+        private void lblInstallDrop_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            if (cbInstallKeepData.Checked)
+                Data.CMD.Execute($"{Data.ADBPath} install -r \"{files[0]}\"");
+            else
+                Data.CMD.Execute($"{Data.ADBPath} install \"{files[0]}\"");
+        }
+
         private void btnFilePush_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();

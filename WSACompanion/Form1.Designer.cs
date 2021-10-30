@@ -45,6 +45,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuItemConnect = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.lblInstallDrop = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.flowPanel.SuspendLayout();
@@ -59,11 +60,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblInstallDrop);
             this.groupBox1.Controls.Add(this.cbInstallKeepData);
             this.groupBox1.Controls.Add(this.btnInstall);
             this.groupBox1.Location = new System.Drawing.Point(3, 85);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 78);
+            this.groupBox1.Size = new System.Drawing.Size(200, 110);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Install app";
@@ -251,6 +253,19 @@
             this.splitContainer.SplitterDistance = 200;
             this.splitContainer.TabIndex = 6;
             // 
+            // lblInstallDrop
+            // 
+            this.lblInstallDrop.AllowDrop = true;
+            this.lblInstallDrop.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lblInstallDrop.Location = new System.Drawing.Point(6, 74);
+            this.lblInstallDrop.Name = "lblInstallDrop";
+            this.lblInstallDrop.Size = new System.Drawing.Size(188, 33);
+            this.lblInstallDrop.TabIndex = 2;
+            this.lblInstallDrop.Text = "Drop here an APK to install";
+            this.lblInstallDrop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInstallDrop.DragDrop += new System.Windows.Forms.DragEventHandler(this.lblInstallDrop_DragDrop);
+            this.lblInstallDrop.DragEnter += new System.Windows.Forms.DragEventHandler(this.lblInstallDrop_DragEnter);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,6 +313,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuItemConnect;
         private System.Windows.Forms.SplitContainer splitContainer;
+        private System.Windows.Forms.Label lblInstallDrop;
     }
 }
 
